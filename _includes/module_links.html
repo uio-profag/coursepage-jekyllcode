@@ -1,0 +1,25 @@
+<div class="card module-links col-centered">
+    <div class="card-header">
+        <h2>{{ include.title }}</h2>
+    </div>
+    <div class="card-body">
+        {% unless include.published==false %}
+                {% if include.forelesningsnotat != "" %}
+                    <a href="{{ include.forelesningsnotat }}" class="btn btn-outline-primary materials-links">Forelesningsnotat</a>
+                {% endif %}
+                {% if include.slides != "" %}
+                    <a href="{{ include.slides }}" class="btn btn-outline-primary materials-links">Slides</a>
+                {% endif %}
+                {% if include.oppgaver != "" %}
+                    <a href="{{ include.oppgaver }}" class="btn btn-outline-primary materials-links">Oppgaver</a>
+                {% endif %}
+                {% if include.losningsforslag != "" %}
+                    <a href="{{ include.losningsforslag }}" class="btn btn-outline-primary materials-links">Løsningsforslag</a>
+                {% endif %}
+        {% endunless %}
+{% unless include.published==true %}
+    <p>Undervisningsmateriale kommer senere.</p>
+{% endunless %}
+{{ include.custombottom }}
+    </div>
+</div> 
