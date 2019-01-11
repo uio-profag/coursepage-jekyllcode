@@ -1,20 +1,19 @@
-<div class="card module-links col-centered">
-    <div class="card-header">
-        <h2>{{ include.title }}</h2>
-    </div>
+<div class="card mb-3" style="max-width: 30rem;">
     <div class="card-body">
+        <h4 class="card-title">{{ include.title }}</h4>
+        <p class="card-text">{{ include.description }}</p>
         {% unless include.published==false %}
                 {% if include.forelesningsnotat != "" %}
-                    <a href="{{ include.forelesningsnotat }}" class="btn btn-outline-primary materials-links">Forelesningsnotat</a>
+                    <a href="{{ include.forelesningsnotat }}" class="btn btn-outline-primary">Åpne modul</a>
                 {% endif %}
                 {% if include.slides != "" %}
-                    <a href="{{ include.slides }}" class="btn btn-outline-primary materials-links">Slides</a>
+                    <a href="{{ include.slides }}" class="btn btn-outline-primary">Slides</a>
                 {% endif %}
                 {% if include.oppgaver != "" %}
-                    <a href="{{ include.oppgaver }}" class="btn btn-outline-primary materials-links">Oppgaver</a>
+                    <a href="{{ include.oppgaver }}" class="btn btn-outline-primary">Oppgaver</a>
                 {% endif %}
                 {% if include.losningsforslag != "" %}
-                    <a href="{{ include.losningsforslag }}" class="btn btn-outline-primary materials-links">Løsningsforslag</a>
+                    <a href="{{ include.losningsforslag }}" class="btn btn-outline-primary">sLøsningsforslag</a>
                 {% endif %}
         {% endunless %}
 {% unless include.published==true %}
